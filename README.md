@@ -1,42 +1,66 @@
-<p align="center">
-  <img src="docs/logo.svg" width="64" height="64" alt="Answer me with HTML in Shimo Style logo">
-</p>
-
-<h1 align="center">Answer me with HTML in Shimo Style</h1>
-
-<p align="center">
-  <b>An agent skill that answers hard questions with a one-page HTML in Shimo Docs style.</b>
+<p align="right">
+  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
 <p align="center">
-  <img src="docs/images/shimo-light.png" alt="Showcase: Answer me with HTML in Shimo Style. A white Shimo Docs page with a bold title, a flow diagram, a comparison table and a code block, shown in a browser window." width="100%">
+  <img src="docs/logo.svg" width="72" height="72" alt="Answer me with HTML in Shimo Style">
+</p>
+
+<h1 align="center">Answer me with HTML<br>in Shimo Style</h1>
+
+<p align="center">
+  <b>An agent skill that answers hard questions with a one-page HTML in Shimo Docs style.</b><br>
+  <sub>Markdown in. One self-contained page out. No server, no build step.</sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/kanzakivnw/answer-me-with-html-in-Shimo-Style/releases"><img src="https://img.shields.io/github/v/release/kanzakivnw/answer-me-with-html-in-Shimo-Style?style=flat-square&amp;color=2b68c2" alt="Release"></a>
+  <a href="https://github.com/kanzakivnw/answer-me-with-html-in-Shimo-Style/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kanzakivnw/answer-me-with-html-in-Shimo-Style?style=flat-square&amp;color=2b68c2" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/node-%E2%89%A5%2020-2b68c2?style=flat-square" alt="Node.js 20 or newer">
+  <img src="https://img.shields.io/badge/theme-Shimo%20Docs-2b68c2?style=flat-square" alt="Shimo Docs theme">
+  <a href="https://kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style/"><img src="https://img.shields.io/badge/demo-GitHub%20Pages-2f8f5b?style=flat-square" alt="Demo"></a>
+</p>
+
+<p align="center">
+  <a href="https://kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style/"><b>Demo</b></a> ·
+  <a href="#-install"><b>Install</b></a> ·
+  <a href="#-the-shimo-look"><b>Theme</b></a> ·
+  <a href="#-development"><b>Development</b></a>
+</p>
+
+<p align="center">
+  <img src="docs/images/shimo-light.png" width="100%" alt="Showcase: Answer me with HTML in Shimo Style. A white Shimo Docs page with a bold title, a flow diagram, a comparison table and a code block, shown in a browser window.">
 </p>
 
 <p align="center">
   <sub>The built-in <code>shimo</code> theme. Run <code>am config set mode dark</code>, or use the page toolbar, for the dark variant.</sub>
 </p>
 
-A fork of [QingYunA/answer-me-with-html](https://github.com/QingYunA/answer-me-with-html) (MIT) that turns the Shimo Docs
-look into a **built-in theme and the default theme**. The CLI, draft format, components, explainer videos and settings
-come from the original project. The Shimo theme is new: white square page on a `#f7f7f7` canvas, a 30px/700 document
-title, 15px/1.7 body text, neutral grays, thin rules, and one accessible Shimo blue for links and highlights.
+## Why this fork?
 
-## Demo
+[Answer me with HTML](https://github.com/QingYunA/answer-me-with-html) already turns a Markdown draft into one clean HTML
+page. This fork adds a **project-native Shimo Docs theme** and makes it the default, so every page looks like a document
+someone would actually read.
 
-Open the live demo: [kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style](https://kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style/)
+| | Original | This fork |
+| :--- | :--- | :--- |
+| CLI, drafts, components, videos | ✅ | ✅ unchanged |
+| Themes | blueprint · shadcn · paper · 3b1b | + **`shimo`**, built in and default |
+| Look | technical board / cards / paper | white square page on `#f7f7f7`, 30px/700 title, 15px/1.7 body |
+| Quality | — | `0 errors · 0 warnings`, WCAG AA contrast |
 
-It is rendered from [`demo/index.md`](demo/index.md) by the Pages workflow, so the deployed page always matches the
-bundled CLI and the current theme.
+## ✨ Features
 
-## What you get
+| Feature | What you get |
+| :--- | :--- |
+| 🎨 **Shimo Docs by default** | White page, thin gray rules, neutral grays and one accessible Shimo blue. |
+| 📄 **One file, offline** | The output is a single HTML file with inline CSS and JS. No server, no CDN. |
+| 🧩 **Real components** | Tables, code blocks, callouts, flow / sequence / ER diagrams, charts, timelines, trees and math. |
+| 🌗 **Light & dark** | Both palettes are token-driven and pass the theme's contrast checks. |
+| ⚡ **Fast** | The model writes a short Markdown draft; the bundled CLI does layout and SVG coordinates. |
+| 🧪 **Controlled writing** | The STE check flags wordy sentences and overlong paragraphs before the page is written. |
 
-- One standalone HTML file per answer. No server, no dependencies to install after the skill is installed.
-- The Shimo Docs theme is `shimo`, built in and set as the default. `theme: auto` still picks paper / blueprint by content.
-- Light and dark palettes both pass the theme's contrast checks (0 errors, 0 warnings).
-- Tables, code blocks, callouts, flow / sequence / ER diagrams, charts, timelines, trees and math all follow the theme.
-- The original features remain: `am render`, `am patch`, `am video`, STE writing checks, page comments and the reply loop.
-
-## Install
+## 🚀 Install
 
 You need [Node.js](https://nodejs.org/) 20 or newer. There is no `npm install` step: the CLI is bundled inside the skill.
 
@@ -68,7 +92,8 @@ The installer ([vercel-labs/skills](https://github.com/vercel-labs/skills)) asks
 dsh plugin --profile web add github:kanzakivnw/answer-me-with-html-in-Shimo-Style
 ```
 
-### Manual install
+<details>
+<summary><b>Manual install</b></summary>
 
 ```bash
 git clone --depth 1 https://github.com/kanzakivnw/answer-me-with-html-in-Shimo-Style.git /tmp/answer-me-with-html-in-shimo-style
@@ -78,7 +103,9 @@ cp -R /tmp/answer-me-with-html-in-shimo-style/skills/answer-me-with-html-in-shim
 Other skill folders: Codex `~/.codex/skills/`, Cursor `~/.cursor/skills/`, OpenCode `~/.config/opencode/skill/`,
 DeepSeek Harness `~/.dsh/skills/`.
 
-## Use
+</details>
+
+## 🧩 Use
 
 Ask a question the way you always do:
 
@@ -105,24 +132,57 @@ am list                        # templates, themes, components
 On the page itself, the top-right toolbar switches theme and light/dark mode, opens comments, and copies the reply
 Markdown back to the agent.
 
-## The Shimo theme
+## 🎨 The Shimo look
 
-The theme follows measurements from the Shimo editor (2026-10):
+The theme follows measurements from the Shimo editor (2026-10). Nothing is hand-waved: the tokens below are the same
+ones the theme checks and ships.
 
-| Element | Value |
-| :--- | :--- |
-| Canvas | `#f7f7f7` |
-| Page | white, square corners, `0 1px 5px rgba(0,0,0,.13)` shadow |
-| Document title | 30px, weight 700 |
-| Body | 15px, line-height 1.7 |
-| Grays | text `#3a3a3a` / `#6b6b6b` / `#9a9a9a`; rules `#e7e7e7` |
-| Accent | `#2b68c2` (links, highlights, focus) |
-| Tables | `#f5f5f5` header, 1px `#e7e7e7` rules |
+| Element | Value | Where it shows |
+| :--- | :--- | :--- |
+| Canvas | `#f7f7f7` | page background |
+| Paper | `#ffffff` + `0 1px 5px rgba(0,0,0,.13)` | square page with a quiet shadow |
+| Title / body | `30px/700` · `15px/1.7` | document title and prose |
+| Ink | `#3a3a3a` · `#6b6b6b` · `#9a9a9a` | text, secondary text, metadata |
+| Rules | `#e7e7e7` · `#efefef` | table borders and hairlines |
+| Fill | `#f5f5f5` | table headers, code blocks, inline code |
+| Accent | `#2b68c2` | links, focus rings, highlights |
+| Diagram | `#d5dae1` strokes · `#eaf2fe` highlights | flow, sequence, ER, charts |
 
-The theme file lives in the source at `src/themes/shimo.js`. A user theme with the same name in
-`~/.answer-me-with-html/themes/shimo.json` would shadow it; do not install one if you want this built-in version.
+The theme source is [`src/themes/shimo.js`](src/themes/shimo.js). A user theme with the same name in
+`~/.answer-me-with-html/themes/shimo.json` would shadow it; do not install one if you want the built-in version.
 
-## Development
+<details>
+<summary><b>Doc template preview</b></summary>
+
+<p align="center">
+  <img src="docs/images/shimo-doc.png" width="86%" alt="The doc template: a table of contents on the left, long-form sections on the right, rendered in the Shimo Docs theme.">
+</p>
+
+</details>
+
+## 🔄 How it works
+
+```mermaid
+flowchart LR
+  Q[Question] --> D[Markdown draft]
+  D --> C[Bundled am CLI]
+  C --> T[shimo theme tokens]
+  T --> P[Single HTML page]
+```
+
+The model never writes HTML, CSS or SVG. It writes the draft; the CLI owns layout, colors, dark mode, diagram
+coordinates and the writing checks.
+
+## 📁 Project layout
+
+```text
+skills/answer-me-with-html-in-shimo-style/   the skill: SKILL.md, references and the bundled CLI
+src/themes/shimo.js                          the Shimo theme source (built into the CLI)
+demo/                                        the GitHub Pages demo (index.md → index.html)
+.github/workflows/pages.yml                  renders the demo and deploys it to Pages
+```
+
+## 🛠 Development
 
 ```bash
 npm ci
@@ -133,16 +193,13 @@ npm test
 `skills/answer-me-with-html-in-shimo-style/scripts/am.mjs` is generated. Edit `src/`, then run `npm run build` and
 commit both.
 
-## Always-on mode (optional)
-
-To add a small page to every conclusion, paste this rule into your agent's rules file (for example `CLAUDE.md` or
-`AGENTS.md`):
-
-> [answer-me-with-html-in-shimo-style always-on] When you give a conclusion, summary, plan, comparison, review or explanation, also render a small page with the bundled CLI; render with `--no-open` and put the page link on the last line of the reply in the format described in the skill's `SKILL.md`.
-
-## Credits and license
+## ⚖️ Credits & license
 
 Forked from [Answer me with HTML](https://github.com/QingYunA/answer-me-with-html) by QingYunA, MIT.
 The Shimo theme, fork branding and default-theme change are by [kanzakivnw](https://github.com/kanzakivnw).
 See [LICENSE](LICENSE) and [NOTICE](NOTICE). The Bangers font that a theme can embed is under the
 [SIL Open Font License 1.1](skills/answer-me-with-html-in-shimo-style/licenses/OFL-Bangers.txt).
+
+<p align="center">
+  <sub>If this skill makes your answers easier to read, a ⭐ helps other people find it.</sub>
+</p>
