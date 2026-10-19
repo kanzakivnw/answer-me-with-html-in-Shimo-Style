@@ -21,6 +21,13 @@ look into a **built-in theme and the default theme**. The CLI, draft format, com
 come from the original project. The Shimo theme is new: white square page on a `#f7f7f7` canvas, a 30px/700 document
 title, 15px/1.7 body text, neutral grays, thin rules, and one accessible Shimo blue for links and highlights.
 
+## Demo
+
+Open the live demo: [kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style](https://kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style/)
+
+It is rendered from [`demo/index.md`](demo/index.md) by the Pages workflow, so the deployed page always matches the
+bundled CLI and the current theme.
+
 ## What you get
 
 - One standalone HTML file per answer. No server, no dependencies to install after the skill is installed.

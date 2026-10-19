@@ -20,6 +20,12 @@
 **内置主题，并设为默认主题**。CLI、草稿格式、组件、讲解视频和设置都来自原项目；新增的是石墨主题：
 浅灰 `#f7f7f7` 画布上的白色方角纸张、30px/700 文档标题、15px/1.7 正文、中性灰、细线，以及一个可访问的石墨蓝强调色。
 
+## 演示
+
+在线演示：[kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style](https://kanzakivnw.github.io/answer-me-with-html-in-Shimo-Style/)
+
+由 Pages workflow 从 [`demo/index.md`](demo/index.md) 重新渲染，保证展示页与当前 CLI 和主题一致。
+
 ## 你会得到什么
 
 - 每个回答一个独立 HTML 文件。装好 skill 后不需要服务器，也不需要再装依赖。

@@ -1,22 +1,14 @@
 name: Pages
 
-# Build the project website (npm run site) and publish site/dist to GitHub Pages.
+# Publish the standalone demo in demo/ to GitHub Pages.
+# The upstream project website (site/) is not built here: this fork deploys one page.
 on:
   push:
     branches: [main]
     paths:
-      - 'site/**'
-      - 'src/**'
-      - 'examples/**'
-      - 'marketplace/**'
-      - 'docs/images/**'
-      - 'package.json'
-      - 'scripts/inline-assets.mjs'
+      - 'demo/**'
       - 'skills/answer-me-with-html-in-shimo-style/scripts/am.mjs'
       - '.github/workflows/pages.yml'
-  # Rebuild every 6 hours so the star count baked into the page stays current.
-  schedule:
-    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -27,34 +19,37 @@ permissions:
 # One deployment at a time; a newer push replaces a queued one.
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
-      - name: Build the website
-        run: npm run site
+      - name: Render the demo from its draft
         env:
-          # Lets gh read the star count shown on the page.
-          GH_TOKEN: ${{ github.token }}
-      - uses: actions/upload-pages-artifact@v3
+          AM_HOME: ${{ runner.temp }}/am-home
+          AM_NO_UPDATE_CHECK: '1'
+        run: >-
+          node skills/answer-me-with-html-in-shimo-style/scripts/am.mjs
+          render demo/index.md --theme shimo --mode light --no-open
+          -o demo/index.html
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
         with:
-          path: site/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
+          # Enables Pages on the first run if the repository has none yet.
+          enablement: true
+      - name: Upload the demo
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: demo
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
