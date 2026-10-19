@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/shimo-light.png" alt="A rendered answer page using the Shimo Docs theme: white paper on a light gray canvas, a bold title, tables and diagrams with thin gray rules" width="100%">
+  <img src="docs/images/shimo-light.png" alt="Showcase: Answer me with HTML in Shimo Style. A white Shimo Docs page with a bold title, a flow diagram, a comparison table and a code block, shown in a browser window." width="100%">
 </p>
 
 <p align="center">
-  <sub>Default light theme. Run <code>am config set mode dark</code> (or use the page toolbar) for the dark variant.</sub>
+  <sub>The built-in <code>shimo</code> theme. Run <code>am config set mode dark</code>, or use the page toolbar, for the dark variant.</sub>
 </p>
 
 A fork of [QingYunA/answer-me-with-html](https://github.com/QingYunA/answer-me-with-html) (MIT) that turns the Shimo Docs

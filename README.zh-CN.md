@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/shimo-light.png" alt="石墨文档风格的回答页：浅灰画布上的白色纸张、加粗标题、细线表格与图表" width="100%">
+  <img src="docs/images/shimo-light.png" alt="项目展示图：Answer me with HTML in Shimo Style。浏览器窗口中的白色石墨文档页，包含加粗标题、流程图、对比表格和代码块。" width="100%">
 </p>
 
 <p align="center">
-  <sub>默认浅色主题。运行 <code>am config set mode dark</code>，或用页面右上角工具条切换深色。</sub>
+  <sub>内置 <code>shimo</code> 主题。运行 <code>am config set mode dark</code>，或用页面右上角工具条切换深色。</sub>
 </p>
 
 这是 [QingYunA/answer-me-with-html](https://github.com/QingYunA/answer-me-with-html)（MIT）的 fork：把石墨文档的观感做成
