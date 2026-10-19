@@ -1,0 +1,25 @@
+Answer me with HTML in Shimo Style
+==================================
+
+This project is a fork of "Answer me with HTML"
+(https://github.com/QingYunA/answer-me-with-html),
+Copyright (c) 2026 Answer me with HTML contributors, released under the MIT License.
+
+The original copyright notice and the MIT permission notice are kept in LICENSE.
+
+Changes in this fork (2026, by kanzakivnw)
+------------------------------------------
+
+- Added `src/themes/shimo.js`: a built-in Shimo Docs theme with light and dark palettes and diagram / chart tokens.
+- Made `shimo` the default theme in `src/config.js` (`auto` remains available).
+- Renamed the skill, package, plugin and DSH provider identifiers to
+  `answer-me-with-html-in-shimo-style`.
+- Updated the install guide, README files and preview images.
+
+Third-party works kept from the original project
+------------------------------------------------
+
+- The Bangers font (when a theme embeds it) is under the SIL Open Font License 1.1;
+  the full text is in `skills/answer-me-with-html-in-shimo-style/licenses/OFL-Bangers.txt`.
+- The generated CLI bundle contains code from the original project's dependencies
+  (including marked and Temml, both MIT) under their respective licenses.
